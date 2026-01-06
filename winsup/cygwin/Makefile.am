@@ -42,10 +42,10 @@ newlib_build=$(target_builddir)/newlib
 toollibdir=$(tooldir)/lib
 toolincludedir=$(tooldir)/include
 
-# Parameters used in building the msys-2.0.dll.
+# Parameters used in building the cygwin1.dll.
 
-DLL_NAME=msys-2.0.dll
-NEW_DLL_NAME=new-msys-2.0.dll
+DLL_NAME=cygwin1.dll
+NEW_DLL_NAME=new-cygwin1.dll
 DEF_FILE=msys.def
 LIB_NAME=libmsys-2.0.a
 
@@ -595,9 +595,9 @@ LIBSERVER = $(cygserver_blddir)/libcygserver.a
 $(LIBSERVER):
 	$(MAKE) -C $(cygserver_blddir) libcygserver.a
 
-# We build as new-msys-2.0.dll and rename at install time to overcome native
+# We build as new-cygwin1.dll and rename at install time to overcome native
 # rebuilding issues (we don't want the build tools to see a partially built
-# msys-2.0.dll and attempt to use it instead of the old one).
+# cygwin1.dll and attempt to use it instead of the old one).
 
 # linker script
 LDSCRIPT=cygwin.sc

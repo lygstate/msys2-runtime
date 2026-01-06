@@ -25,7 +25,7 @@
 		     save for errors.
      -testinterrupts Pauses the program for 30 seconds so you can demonstrate
 		     that it handles ^C properly.
-     -cygwin         Name of DLL to load.  Defaults to "msys-2.0.dll". */
+     -cygwin         Name of DLL to load.  Defaults to "cygwin1.dll". */
 
 #include "cygload.h"
 #include <iostream>
@@ -224,7 +224,7 @@ cygwin::connector::~connector ()
 
     // This should call init.cc:dll_entry() with DLL_PROCESS_DETACH.
     if (!FreeLibrary (_library))
-      throw windows_error ("FreeLibrary", "msys-2.0.dll");
+      throw windows_error ("FreeLibrary", "cygwin1.dll");
   }
   catch (std::exception &x)
   {
@@ -490,7 +490,7 @@ main (int argc, char *argv[])
 
   std::ostringstream output;
   bool verbose = false, testinterrupts = false;
-  const char *dll = "msys-2.0.dll";
+  const char *dll = "cygwin1.dll";
 
   out = &output;
 
