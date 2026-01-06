@@ -154,13 +154,13 @@ cygwin::connector::connector (const char *dll)
 
   *out << "Initializing cygwin..." << endl;
 
-  // This calls dcrt0.cc:msys_dll_init(), which calls dll_crt0_1(),
+  // This calls dcrt0.cc:cygwin_dll_init(), which calls dll_crt0_1(),
   // which will, among other things:
   // * spawn the cygwin signal handling thread from sigproc_init()
   // * initialize the thread-local storage for this thread and overwrite
   //   the first 4K of the stack
   void (*cyginit) ();
-  get_symbol ("msys_dll_init", cyginit);
+  get_symbol ("cygwin_dll_init", cyginit);
   (*cyginit) ();
 
   *out << "Loading symbols..." << endl;
