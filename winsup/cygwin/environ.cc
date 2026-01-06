@@ -201,6 +201,7 @@ parse_options (const char *inbuf)
       if (export_settings)
 	{
 	  debug_printf ("%s", newbuf + 1);
+	  setenv ("MSYS", newbuf + 1, 1);
 	  setenv ("CYGWIN", newbuf + 1, 1);
 	}
       return;
