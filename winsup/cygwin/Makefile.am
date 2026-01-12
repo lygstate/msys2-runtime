@@ -643,6 +643,7 @@ $(LIB_NAME): $(DEF_FILE) $(LIBCOS) | $(NEW_DLL_NAME)
 speclib=\
 	$(srcdir)/scripts/speclib $(toolopts) \
 	--exclude='cygwin' \
+	--exclude='msys' \
 	--exclude='(?i:dll)' \
 	--exclude='reloc' \
 	--exclude='^main$$' \
